@@ -1,0 +1,5 @@
+{
+  "name": "PromptCraft - App Blueprint Creator",
+  "description": "An interactive tool that uses a conversational AI assistant to help you generate a detailed blueprint for your next application.",
+  "requestFramePermissions": []
+}
