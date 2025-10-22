@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ onSettingsClick, onCreatePbd }) => {
           <h1 className="text-lg font-bold text-brand-text-primary">PDB Editor</h1>
         </div>
         <nav className="flex items-center gap-4">
-          <Button variant="primary" onClick={onCreatePbd}>
+          <Button variant="default" onClick={onCreatePbd}>
             CREATE PBD
           </Button>
           <Button variant="outline">
