@@ -4,9 +4,10 @@ import Button from './ui/Button';
 
 interface HeaderProps {
   onSettingsClick: () => void;
+  onCreatePbd: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onSettingsClick }) => {
+const Header: React.FC<HeaderProps> = ({ onSettingsClick, onCreatePbd }) => {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-brand-border bg-brand-surface/70 backdrop-blur-xl">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -15,6 +16,9 @@ const Header: React.FC<HeaderProps> = ({ onSettingsClick }) => {
           <h1 className="text-lg font-bold text-brand-text-primary">PDB Editor</h1>
         </div>
         <nav className="flex items-center gap-4">
+          <Button variant="primary" onClick={onCreatePbd}>
+            CREATE PBD
+          </Button>
           <Button variant="outline">
             Share
           </Button>
