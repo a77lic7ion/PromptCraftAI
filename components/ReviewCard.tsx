@@ -1,13 +1,22 @@
 import React from 'react';
 import Card from './ui/Card';
+import SuggestedTextarea from './ui/SuggestedTextArea';
 
-const ReviewCard: React.FC = () => {
+const ReviewCard: React.FC<{ value: string; onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void; }> = ({ value, onChange }) => {
+  const suggestions = [
+    "Approved by...",
+    "Rejected by...",
+    "Needs further review...",
+  ];
+
   return (
     <Card title="Review and Approval">
-      <textarea
-        className="w-full p-2 border rounded bg-brand-surface border-brand-border"
+      <SuggestedTextarea
         placeholder="Record review comments and approvals..."
         rows={4}
+        value={value}
+        onChange={onChange}
+        suggestions={suggestions}
       />
     </Card>
   );

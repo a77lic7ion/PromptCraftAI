@@ -1,13 +1,22 @@
 import React from 'react';
 import Card from './ui/Card';
+import SuggestedTextarea from './ui/SuggestedTextArea';
 
-const ComplianceCard: React.FC = () => {
+const ComplianceCard: React.FC<{ value: string; onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void; }> = ({ value, onChange }) => {
+  const suggestions = [
+    "GDPR",
+    "CCPA",
+    "HIPAA",
+  ];
+
   return (
     <Card title="Compliance">
-      <textarea
-        className="w-full p-2 border rounded bg-brand-surface border-brand-border"
+      <SuggestedTextarea
         placeholder="Detail any compliance requirements..."
         rows={4}
+        value={value}
+        onChange={onChange}
+        suggestions={suggestions}
       />
     </Card>
   );
